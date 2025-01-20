@@ -2,20 +2,31 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
+/* Default Light Mode */
 body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--color-light-bg, #F3F9F6);
+  color: var(--color-light-text, #0E182C);
+}
+
+/* Dark Mode */
+body.dark {
+  background-color: var(--color-dark-bg, #0E182C);
+  color: var(--color-dark-text, #F3F9F6);
+}
+.profile{
+  shape-outside: margin-box;
+}
+@layer base {
+  body {
+    @apply font-primary text-primary bg-secondary leading-loose relative dark:bg-primary dark:text-secondary;
+  }
+  p {
+    @apply dark:text-gray-400;
+  }
+  a {
+    @apply dark:text-gray-400;
+  }
+  span {
+    @apply dark:text-secondary;
+  }
 }
