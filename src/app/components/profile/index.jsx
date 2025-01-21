@@ -15,7 +15,7 @@ const Profile = () => {
 
                     <Image
                         src="/photo.png"
-                        alt="profile"
+                        alt="profi"
                         priority
                         quality={100}
                         fill
