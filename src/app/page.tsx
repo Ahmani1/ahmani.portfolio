@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-no-comment-textnodes */
 import Experience from "./components/experience";
 import Profile from "./components/profile/index";
 import { Metadata } from "next";
