@@ -28,13 +28,10 @@ export default {
       },
       container: {
         center: true,
-        padding: "0",
-        
+        padding: '1rem',
         screens: {
           xl: '1200px',
         },
-
-
       },
     },
   },

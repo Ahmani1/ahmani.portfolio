@@ -25,14 +25,14 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
- <body className={`${jetbrainsMono.variable} container mx-4 md:mx-auto` }>
-        <Mode>
-          <div className="min-h-screen bg-secondary text-primary dark:bg-primary dark:text-secondary flex md:flex-row flex-col">
-            <Header />
-            <main className="container">{children}</main>
-          </div>
-        </Mode>
+      <body className={`${jetbrainsMono.variable} container py-12`}>
+        <div className="min-h-screen bg-secondary text-primary dark:bg-primary dark:text-secondary flex md:flex-row flex-col">
+          <Header />
+          <main className="flex-1">{children}</main>
+        </div>
       </body>
+      <Mode />
+
     </html>
   );
 }

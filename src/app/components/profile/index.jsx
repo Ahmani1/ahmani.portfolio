@@ -11,8 +11,7 @@ const Profile = () => {
                     transition: { delay: 2, duration: 0.5, ease: "easeIn" },
                 }}
             >
-                <div className="w-[150px] h-[150px]   overflow-hidden  relative ">
-
+                <div className="w-[150px] h-[150px] overflow-hidden  relative">
                     <Image
                         src="/photo.png"
                         alt="profi"
@@ -43,7 +42,6 @@ const Profile = () => {
                         rotate: [120, 360],
                     }}
                     transition={{ duration: 20, repeat: Infinity, repeatType: "reverse" }}
-
                 />
             </motion.svg>
         </div>

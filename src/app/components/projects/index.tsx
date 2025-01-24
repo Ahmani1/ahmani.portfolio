@@ -1,16 +1,14 @@
-import { RiLink } from "react-icons/ri";
+import { TbExternalLink } from "react-icons/tb";
 
-// Technology Chip Component
 const TechnologyChip = ({ tech }: { tech: string }) => (
-  <div className="flex items-center rounded-full bg-teal-400/10 px-3 py-1 text-xs font-medium leading-5 text-accent dark:text-white">
+  <div className="inlone-flex  items-center rounded-full bg-teal-400/10 px-3 py-1 text-xs font-medium leading-5 text-accent dark:text-white">
     {tech}
   </div>
 );
 
-// Reusable Project Item Component
 const ProjectItem = ({ title, company, description, technologies, link }: { title?: string, company: string, description: string, technologies: string[], link: string }) => (
-  <li className="mb-12">
-    <div className="group relative grid pb-1 transition-all sm:grid-cols-8 sm:gap-8 md:gap-4 lg:hover:!opacity-100 lg:group-hover/list:opacity-50">
+  <li className="group mb-12">
+    <div className="relative grid pb-1 transition-all sm:grid-cols-8 sm:gap-8 md:gap-4 lg:hover:!opacity-100 lg:group-hover/list:opacity-50">
       <div className="absolute -inset-x-4 -inset-y-4 z-0 hidden rounded-md transition motion-reduce:transition-none lg:-inset-x-6 lg:block lg:group-hover:bg-slate-700 dark:lg:group-hover:bg-slate-800 lg:group-hover:shadow-[inset_0_1px_0_0_rgba(148,163,184,0.1)] lg:group-hover:drop-shadow-lg" />
       
       <header className="z-10 mb-2 mt-1 group-hover:text-slate-300 text-xs font-semibold uppercase tracking-wide text-slate-500 sm:col-span-2">
@@ -23,7 +21,7 @@ const ProjectItem = ({ title, company, description, technologies, link }: { titl
             {title}
             <span className="inline-flex items-baseline ml-1">
               {company}
-              <RiLink className="inline-block h-4 w-4 transition-transform group-hover/link:-translate-y-1 group-hover/link:translate-x-1" />
+              <TbExternalLink className="inline-block h-4 w-4 transition-transform group-hover/link:-translate-y-1 group-hover/link:translate-x-1" />
             </span>
           </a>
         </h3>
@@ -32,7 +30,7 @@ const ProjectItem = ({ title, company, description, technologies, link }: { titl
           {description}
         </p>
 
-        <section className="mt-4 flex flex-wrap" aria-label="Technologies">
+        <section className="mt-4 flex gap-3 flex-wrap" aria-label="Technologies">
           {technologies.map((tech) => (
             <TechnologyChip key={tech} tech={tech} />
           ))}
@@ -42,12 +40,10 @@ const ProjectItem = ({ title, company, description, technologies, link }: { titl
   </li>
 );
 
-// Main Projects Component
 const Projects = () => {
   return (
-    <section id="projects" className="h-auto flex items-center justify-center">
-      <ol>
-        {/* Flyer.fr Project */}
+    <section id="projects">
+      <ol className="group/list">
         <ProjectItem
           company="Flyer.fr"
           description="Un commerce en ligne (e-Commerce) d'impression spécialisé dans les services d'impression. Développement et maintenance des composants clés du frontend pour améliorer l'accessibilité et l'expérience utilisateur."
@@ -55,7 +51,6 @@ const Projects = () => {
           link="https://www.flyer.fr/"
         />
 
-        {/* Flyer.be Project */}
         <ProjectItem
           company="Flyer.be"
           description="Un commerce en ligne (e-Commerce) d'impression. Création et intégration de sites web en utilisant HTML5, CSS3, JQ et PHP5 (Drupal 7)."
@@ -63,7 +58,6 @@ const Projects = () => {
           link="https://www.flyer.be/"
         />
 
-        {/* Mercuryflooring.com Project */}
         <ProjectItem
           company="Mercuryflooring.com"
           description="Development and maintenance of a custom website for Mercury Flooring, a leading provider of flooring solutions."

@@ -24,7 +24,7 @@ const Nav = () => {
      <section>
      <h1 className="text-xl font-bold">
           <span className="text-accent block my-4">// Front End Developer</span>
-          <p className="text-primary/75 text-sm w-1/2">
+          <p className="text-primary dark:text-white text-sm">
             Build accessible, pixel-perfect digital experiences for the web.
           </p>
         </h1>

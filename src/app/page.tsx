@@ -18,26 +18,24 @@ export async function generateMetadata(): Promise<Metadata> {
 
 const Home = () => {
   return (
-    <>
-      <main id="about" className="flex flex-col gap-6 items-center w-full">
-        <header className="flex flex-col-reverse md:flex-row items-start gap-6 w-full">
-          <article className="text-center xl:text-left flex flex-col gap-4 max-w-lg">
-            <h1 className="text-4xl font-bold">Welcome!</h1>
-            <p className="text-primary/75 text-justify">
-                <Profile />
-
-              As a software development graduate, I bring energy, precision, and adaptability to every project I take on. With a strong passion for front-end development, particularly with React.js, I am always striving to enhance user experiences through clean, efficient code. My goal is to help drive the success of your business by delivering innovative solutions. I look forward to applying my skills to your team and embracing new challenges along the way.
-            </p>
-
-            <section className="flex gap-4">
-            </section>
-          </article>
-        </header>
+    <main>
+      <section className="flex flex-col gap-14">
+        <article id="about" className="xl:text-left text-primary/75 text-justify text-base">
+          <div>
+            <Profile />
+            
+            
+           <p>
+            <h1 className="text-xl font-bold "><span className="dark:text-white text-accent">// AHMANI </span> ELMOKHTAR //</h1>
+            As a software development graduate, I bring energy, precision, and adaptability to every project I take on. With a strong passion for front-end development, particularly with React.js, I am always striving to enhance user experiences through clean, efficient code. My goal is to help drive the success of your business by delivering innovative solutions. I look forward to applying my skills to your team and embracing new challenges along the way.</p>
+          </div>
+        </article>
 
         <Experience />
+
         <Projects />
-      </main>
-    </>
+      </section>
+    </main>
   );
 };
 
