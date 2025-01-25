@@ -25,7 +25,7 @@ const Profile = () => {
             </motion.div>
 
             <motion.svg
-                className={"absolute top-0 left-0 w-[150px] h-[150px]"}
+                className={"absolute top-0 md:left-0 left-auto w-[150px] h-[150px]"}
                 viewBox="0 0 506 506"
                 fill="transparent"
             >

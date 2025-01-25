@@ -15,6 +15,8 @@ body.dark {
 }
 .profile{
   shape-outside: margin-box;
+  justify-content: center;
+  display: flex;
 }
 @layer base {
   body {
@@ -43,7 +45,7 @@ body.dark {
 
   /* Transparent flowing background */
   .bg-flow-transparent {
-    background: linear-gradient(45deg, rgba(250, 250, 250, 0.5), rgba(253, 250, 249, 0.5), rgba(52, 52, 52, 0.5), rgba(255, 255, 255, 0.5));
+    background: linear-gradient(45deg, rgba(100, 97, 97, 0.5), rgba(253, 250, 249, 0.5), rgba(52, 52, 52, 0.5), rgba(255, 255, 255, 0.5));
     background-size: 400% 400%;
     animation: flow-background 10s linear infinite;
   }

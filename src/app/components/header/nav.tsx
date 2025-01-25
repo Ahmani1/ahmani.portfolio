@@ -100,7 +100,7 @@ const Nav = () => {
 
       {/* Mobile Navigation Bar */}
       <div className="md:hidden fixed top-0 right-0 w-full  text-white z-50 bg-flow-transparent bg-cover bg-no-repeat bg-fixed">
-        <div className="flex justify-between items-center p-4">
+        <div className="flex justify-center items-center p-4">
           <section className="flex flex-col gap-4 text-right">
             {links.map((link) => (
               <button
