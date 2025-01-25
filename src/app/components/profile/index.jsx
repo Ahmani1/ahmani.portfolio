@@ -4,7 +4,8 @@ import Image from "next/image";
 
 const Profile = () => {
     return (
-        <div className="w-auto h-auto relative md:float-left float-none mr-4 profile rounded-full">
+       <>
+        <div className="w-auto h-auto relative md:float-left float-none mr-4 profile rounded-full text-center">
             <motion.div
                 initial={{ opacity: 1 }}
                 animate={{
@@ -45,6 +46,7 @@ const Profile = () => {
                 />
             </motion.svg>
         </div>
+       </>
     );
 };
 

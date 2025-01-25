@@ -19,24 +19,20 @@ export async function generateMetadata(): Promise<Metadata> {
 
 const Home = () => {
   return (
-    <main>
-      <section className="flex flex-col gap-14">
-        <article id="about" className="xl:text-left text-primary/75 text-justify text-base">
-          <div>
+      <section className="flex flex-col gap-14 items-center text-center md:text-left">
+        <div id="about" className="xl:text-left text-primary/75 text-justify text-base md:pt-0 pt-12">
+          <article>
             <Profile />
-            
-            
-           <p>
+           <p className="text-center md:text-left">
             <h1 className="text-xl font-bold "><span className="dark:text-white text-accent">// AHMANI </span> ELMOKHTAR //</h1>
             As a software development graduate, I bring energy, precision, and adaptability to every project I take on. With a strong passion for front-end development, particularly with React.js, I am always striving to enhance user experiences through clean, efficient code. My goal is to help drive the success of your business by delivering innovative solutions. I look forward to applying my skills to your team and embracing new challenges along the way.</p>
-          </div>
-        </article>
+          </article>
+        </div>
 
         <Experience />
 
         <Projects />
       </section>
-    </main>
   );
 };
 
