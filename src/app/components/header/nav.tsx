@@ -81,14 +81,14 @@ const Nav = () => {
 
           <section className="flex gap-4 mt-6">
             <Link
-              href="https://www.linkedin.com/in/your-profile/"
+              href="https://www.linkedin.com/in/ahmani-el-mokhtar-b14107206/"
               target="_blank"
               className="text-primary dark:text-accent hover:text-accent transition-all"
             >
               <FaLinkedin size={24} />
             </Link>
             <Link
-              href="https://github.com/your-username/"
+              href="https://github.com/Ahmani1"
               target="_blank"
               className="text-primary dark:text-accent hover:text-accent transition-all"
             >
