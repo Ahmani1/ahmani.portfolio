@@ -6,13 +6,13 @@ import Projects from "./components/projects";
 
 export async function generateMetadata(): Promise<Metadata> {
   return {
-    title: "Home",
+    title: "AHMANI ELMOKHTAR",
     description: "Welcome to my personal portfolio showcasing my skills and experiences.",
     keywords: ["software developer", "portfolio", "web developer", "frontend", "backend"],
     openGraph: {
       title: "Home - Portfolio",
       description: "A showcase of my work, skills, and experiences as a software developer.",
-      url: "https://example.com",
+      url: "https://ahmani-elmokhtar.vercel.app/",
     },
   };
 }
