@@ -2,22 +2,22 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Default Light Mode */
 body {
   background-color: var(--color-light-bg, #F3F9F6);
   color: var(--color-light-text, #0E182C);
 }
 
-/* Dark Mode */
 body.dark {
   background-color: var(--color-dark-bg, #0E182C);
   color: var(--color-dark-text, #F3F9F6);
 }
+
 .profile{
   shape-outside: margin-box;
   justify-content: center;
   display: flex;
 }
+
 @layer base {
   body {
     @apply font-primary text-primary bg-secondary leading-loose relative dark:bg-primary dark:text-secondary;

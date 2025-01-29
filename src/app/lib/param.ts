@@ -1,9 +1,7 @@
 
 
-// Create the locale function
 const createLocaleFN = () => {
-    let locale: Locales =  'en'; // Set default to 'en'
-
+    let locale: Locales =  'en'; 
     const set = (next: Locales) => {
         locale = next;
     };
@@ -14,8 +12,6 @@ const createLocaleFN = () => {
 };
 
 export const localeFN = createLocaleFN();
-
-// Create the params function
 const createParamsFN = () => {
     let params: Record<string, unknown> = {};
 

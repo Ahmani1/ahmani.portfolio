@@ -6,14 +6,21 @@ import Projects from "../components/projects";
 import { localeFN } from "../lib/param";
 import { getTranslation } from "../lib/hook";
 
-export const dynamic = 'force-static';
+export const dynamic = "force-static";
 export const revalidate = false;
 
 export async function generateMetadata(): Promise<Metadata> {
   return {
     title: "AHMANI ELMOKHTAR",
-    description: "Welcome to my personal portfolio showcasing my skills and experiences.",
-    keywords: ["software developer", "portfolio", "web developer", "frontend", "backend"],
+    description:
+      "Welcome to my personal portfolio showcasing my skills and experiences.",
+    keywords: [
+      "software developer",
+      "portfolio",
+      "web developer",
+      "frontend",
+      "backend",
+    ],
     openGraph: {
       title: "Home - Portfolio",
       description: "A showcase of my work, skills, and experiences as a software developer.",
@@ -25,21 +32,25 @@ export async function generateMetadata(): Promise<Metadata> {
 const Home = () => {
   const lang = localeFN.get();
   return (
-      <section className="flex flex-col gap-14 items-center text-center md:text-left">
-        <div id="about" className="xl:text-left text-primary/75 text-justify text-base md:pt-0 pt-12">
+    <section className="flex flex-col gap-14 items-center text-center md:text-left">
+        <div
+          id="about"
+          className="xl:text-left text-primary/75 text-justify text-base md:pt-0 pt-12"
+        >
           <article>
             <Profile />
-           <p className="text-center md:text-left">
-            <h1 className="text-xl font-bold "><span className="dark:text-white text-accent">// AHMANI </span> ELMOKHTAR //</h1>
-            {getTranslation(lang).aboutMe}
+            <p className="text-center md:text-left">
+              <h1 className="text-xl font-bold ">
+                <span className="dark:text-white text-accent">// AHMANI </span>{" "}
+                ELMOKHTAR //
+              </h1>
+              {getTranslation(lang).aboutMe}
             </p>
           </article>
         </div>
-
         <Experience />
-
         <Projects />
-      </section>
+    </section>
   );
 };
 

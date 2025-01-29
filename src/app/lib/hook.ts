@@ -21,7 +21,7 @@ export const translations = {
       company: "Freelance",
       duration: "2021 — January",
       description: [
-        "Creation and integration of HTML5, CSS3, and JavaScript",
+        "Creation and integration of HTML5, CSS3, and JavaScript ",
         "Responsive design implementation",
         "Technical site auditing",
         "Email integration",

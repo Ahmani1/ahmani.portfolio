@@ -1,6 +1,9 @@
 /* eslint-disable react/jsx-no-comment-textnodes */
 "use client";
 import { useState, useEffect } from "react";
+import NavLink from "./navLink";
+import { FaGithub, FaLinkedin } from "react-icons/fa";
+import Link from "next/link";
 
 const links = [
   { id: "about", label: "About" },
@@ -10,6 +13,7 @@ const links = [
 
 const Nav = () => {
   const [activeLink, setActiveLink] = useState("about");
+ 
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -48,12 +52,13 @@ const Nav = () => {
 
   return (
     <>
+      {/* Desktop Navigation */}
       <div className="md:flex hidden flex-col min-h-screen justify-between">
         <nav className="flex flex-col gap-8">
           <section>
             <h1 className="text-xl font-bold">
               <span className="text-accent block my-4 dark:text-white">
-                // Front End Developer
+                Front End Developer
               </span>
               <p className="text-primary dark:text-white text-sm">
                 Build accessible, pixel-perfect digital experiences for the web.
@@ -63,39 +68,54 @@ const Nav = () => {
 
           <section className="flex gap-4 flex-row flex-col">
             {links.map((link) => (
-              <button
+              <NavLink
                 key={link.id}
-                onClick={() => handleGoTo(link.id)}
-                className={`capitalize font-medium transition-all w-fit ${
-                  activeLink === link.id
-                    ? "text-accent dark:text-white dark:hover:text-white"
-                    : "hover:text-accent dark:hover:text-white dark:text-accent text-primary"
-                }`}
-              >
-                // {link.label}
-              </button>
+                id={link.id}
+                label={link.label}
+                activeLink={activeLink}
+                onClick={handleGoTo}
+              />
             ))}
           </section>
         </nav>
+        <section className="flex gap-4 mt-6">
+          <Link
+            href="https://www.linkedin.com/in/ahmani-el-mokhtar-b14107206/"
+            target="_blank"
+            className="text-primary dark:text-accent hover:text-accent transition-all dark:hover:text-white"
+            aria-label="LinkedIn Profile"
+          >
+            <FaLinkedin size={24} />
+          </Link>
+          <Link
+            href="https://github.com/Ahmani1"
+            target="_blank"
+            className="text-primary dark:text-accent hover:text-accent transition-all dark:hover:text-white"
+            aria-label="GitHub Profile"
+          >
+            <FaGithub size={24} />
+          </Link>
+        </section>
       </div>
 
-      {/* Mobile Navigation Bar */}
-      <div className="md:hidden fixed top-0 right-0 w-full  text-white z-50 bg-flow-transparent bg-cover bg-no-repeat bg-fixed">
-        <div className="flex justify-start gap-3 items-center p-4">
-          <section className="flex flex-col gap-4 text-right">
+      {/* Mobile Navigation */}
+      <div className="md:hidden fixed top-0 right-0 w-full bg-transparent dark:bg-slate-800 shadow-sm z-50 ">
+        <div className="flex justify-between p-4">
+          <Link
+            href="/"
+            className="text-4xl font-semibold dark:text-accent text-primary "
+          >
+            AE<span className="dark:text-white text-accent">.</span>
+          </Link>
+          <section className="flex gap-4">
             {links.map((link) => (
-              <button
+              <NavLink
                 key={link.id}
-                onClick={() => handleGoTo(link.id)}
-                className={`capitalize font-medium transition-all w-fit ${
-                  activeLink === link.id
-                    ? "text-black dark:text-white dark:hover:text-white"
-                    : "hover:text-accent dark:hover:text-white dark:text-accent text-primary"
-                }`}
-                style={{ display: activeLink === link.id ? "block" : "none" }} // Conditionally show/hide links
-              >
-                // {link.label}
-              </button>
+                id={link.id}
+                label={link.label}
+                activeLink={activeLink}
+                onClick={handleGoTo}
+              />
             ))}
           </section>
         </div>
