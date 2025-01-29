@@ -1,8 +1,13 @@
 /* eslint-disable react/jsx-no-comment-textnodes */
-import Experience from "./components/experience";
-import Profile from "./components/profile/index";
+import Experience from "../components/experience";
+import Profile from "../components/profile/index";
 import { Metadata } from "next";
-import Projects from "./components/projects";
+import Projects from "../components/projects";
+import { localeFN } from "../lib/param";
+import { getTranslation } from "../lib/hook";
+
+export const dynamic = 'force-static';
+export const revalidate = false;
 
 export async function generateMetadata(): Promise<Metadata> {
   return {
@@ -18,6 +23,7 @@ export async function generateMetadata(): Promise<Metadata> {
 }
 
 const Home = () => {
+  const lang = localeFN.get();
   return (
       <section className="flex flex-col gap-14 items-center text-center md:text-left">
         <div id="about" className="xl:text-left text-primary/75 text-justify text-base md:pt-0 pt-12">
@@ -25,7 +31,8 @@ const Home = () => {
             <Profile />
            <p className="text-center md:text-left">
             <h1 className="text-xl font-bold "><span className="dark:text-white text-accent">// AHMANI </span> ELMOKHTAR //</h1>
-            As a software development graduate, I bring energy, precision, and adaptability to every project I take on. With a strong passion for front-end development, particularly with React.js, I am always striving to enhance user experiences through clean, efficient code. My goal is to help drive the success of your business by delivering innovative solutions. I look forward to applying my skills to your team and embracing new challenges along the way.</p>
+            {getTranslation(lang).aboutMe}
+            </p>
           </article>
         </div>
 

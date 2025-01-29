@@ -1,8 +1,6 @@
 /* eslint-disable react/jsx-no-comment-textnodes */
 "use client";
 import { useState, useEffect } from "react";
-import { FaGithub, FaLinkedin } from "react-icons/fa";
-import Link from "next/link";
 
 const links = [
   { id: "about", label: "About" },
@@ -78,29 +76,12 @@ const Nav = () => {
               </button>
             ))}
           </section>
-
-          <section className="flex gap-4 mt-6">
-            <Link
-              href="https://www.linkedin.com/in/ahmani-el-mokhtar-b14107206/"
-              target="_blank"
-              className="text-primary dark:text-accent hover:text-accent transition-all"
-            >
-              <FaLinkedin size={24} />
-            </Link>
-            <Link
-              href="https://github.com/Ahmani1"
-              target="_blank"
-              className="text-primary dark:text-accent hover:text-accent transition-all"
-            >
-              <FaGithub size={24} />
-            </Link>
-          </section>
         </nav>
       </div>
 
       {/* Mobile Navigation Bar */}
       <div className="md:hidden fixed top-0 right-0 w-full  text-white z-50 bg-flow-transparent bg-cover bg-no-repeat bg-fixed">
-        <div className="flex justify-center items-center p-4">
+        <div className="flex justify-start gap-3 items-center p-4">
           <section className="flex flex-col gap-4 text-right">
             {links.map((link) => (
               <button
@@ -108,7 +89,7 @@ const Nav = () => {
                 onClick={() => handleGoTo(link.id)}
                 className={`capitalize font-medium transition-all w-fit ${
                   activeLink === link.id
-                    ? "text-accent dark:text-white dark:hover:text-white"
+                    ? "text-black dark:text-white dark:hover:text-white"
                     : "hover:text-accent dark:hover:text-white dark:text-accent text-primary"
                 }`}
                 style={{ display: activeLink === link.id ? "block" : "none" }} // Conditionally show/hide links
@@ -116,8 +97,6 @@ const Nav = () => {
                 // {link.label}
               </button>
             ))}
-
-           
           </section>
         </div>
       </div>

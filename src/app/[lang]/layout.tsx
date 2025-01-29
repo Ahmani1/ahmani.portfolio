@@ -1,0 +1,40 @@
+import type { Metadata } from "next";
+import { JetBrains_Mono } from "next/font/google";
+import Header from "../components/header/header";
+import "./globals.css";
+import { localeFN } from "../lib/param";
+
+const jetbrainsMono = JetBrains_Mono({
+  variable: "--font-jetbrains-mono",
+  subsets: ["latin"],
+  weight: ["100", "200", "300", "400", "500", "600", "700", "800"],
+  display: "swap",
+});
+
+export const metadata: Metadata = {
+  title: "My Awesome App",
+  description: "An awesome app built with Next.js.",
+};
+
+export default function RootLayout({
+  params: { lang  },
+  children,
+}: {
+  params: { lang: Locales };
+  children: React.ReactNode;
+}) {
+  // Set the locale on component load
+  localeFN.set(lang);
+
+  return (
+    <html lang={lang}>
+      <body
+        className={`${jetbrainsMono.variable} container py-12 md:min-h-screen flex flex-col md:flex-row bg-secondary text-primary dark:bg-primary dark:text-secondary`}
+      >
+        
+        <Header />
+        <main className="flex-1">{children}</main>
+      </body>
+    </html>
+  );
+}
