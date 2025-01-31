@@ -83,13 +83,10 @@ export const translations = {
   },
 };
 
-export function getTranslation(lang: string): typeof translations.en | typeof translations.fr {
-  if (lang === 'en') {
-    return translations.en;
-  } else if (lang === 'fr') {
-    return translations.fr;
-  } else {
-    console.log(`Unknown language: ${lang}`);
-    return translations.en;
+export function getTranslation(lang: string): typeof translations.en {
+  if (!(lang in translations)) {
+    console.warn(`Unknown language: ${lang}, defaulting to English`);
   }
+
+  return translations[lang as keyof typeof translations] ?? translations.en;
 }
