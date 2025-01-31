@@ -1,9 +1,9 @@
-import { localeFN } from "@/app/lib/param";
+import { localeFN } from "@/lib/param";
 import ProjectItem from "./projectItem";
-import { getTranslation } from "@/app/lib/hook";
+import { getTranslation } from "@/lib/hook";
 
-export default function Projects() {
-  const lang = localeFN.get();
+export default async function Projects() {
+  const lang = await localeFN.get();
   const projects = [
     {
       image: "/flyerbe.png",

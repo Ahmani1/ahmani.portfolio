@@ -1,9 +1,8 @@
+import Header from "@/components/header/header";
+import { localeFN } from "@/lib/param";
 import type { Metadata } from "next";
 import { JetBrains_Mono } from "next/font/google";
-import "../globals.css";
-import { localeFN } from "../lib/param";
-import Header from "../components/header/header";
-import LangProvider from "../components/locales/client";
+import "@/tailwind.css";
 
 const jetbrainsMono = JetBrains_Mono({
   variable: "--font-jetbrains-mono",
@@ -17,25 +16,28 @@ export const metadata: Metadata = {
   description: "An awesome app built with Next.js.",
 };
 
-interface LayoutProps {
-  params: { lang: Locales };
-  children: React.ReactNode;
+export async function generateStaticParams() {
+  return [{ lang: "en" }, { lang: "fr" }];
 }
 
-export default async function LangLayout({ children, params }: LayoutProps) {
+export default async function LangLayout({
+  params,
+  children,
+}: {
+  params: Promise <{ lang : Locales}> ;
+  children: React.ReactNode;
+}) {
   const { lang } = await params;
-  localeFN.set(lang);
+  localeFN.set(lang); 
 
   return (
-    <html>
-      <LangProvider lang={lang}>
-        <body
-          className={`${jetbrainsMono.variable} container py-12 md:min-h-screen flex flex-col md:flex-row bg-secondary text-primary dark:bg-primary dark:text-secondary`}
+    <html lang={lang}>
+      <body 
+        className={`${jetbrainsMono.variable} container py-12 md:min-h-screen flex flex-col md:flex-row bg-secondary text-primary dark:bg-primary dark:text-secondary`}
         >
-          <Header />
-          <main className="flex-1">{children}</main>
-        </body>
-      </LangProvider>
+        <Header />
+        <main className="flex-1">{children}</main>
+      </body>
     </html>
   );
 }

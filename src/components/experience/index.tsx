@@ -1,10 +1,10 @@
-import { getTranslation } from "@/app/lib/hook";
-import { localeFN } from "@/app/lib/param";
+import { getTranslation } from "@/lib/hook";
+import { localeFN } from "@/lib/param";
 import ExperienceItem from "./ExperienceItem";
 
-const Experience = () => {
-  const lang = localeFN.get();
-  const t = getTranslation(lang);
+const Experience = async () => {
+  const lang =  await localeFN.get();
+  const t =  getTranslation(lang);
 
   return (
     <section id="experience" className="w-full">

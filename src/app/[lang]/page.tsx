@@ -1,13 +1,10 @@
 /* eslint-disable react/jsx-no-comment-textnodes */
-import Experience from "../components/experience";
-import Profile from "../components/profile/index";
 import { Metadata } from "next";
-import Projects from "../components/projects";
-import { localeFN } from "../lib/param";
-import { getTranslation } from "../lib/hook";
-
-export const dynamic = "force-static";
-export const revalidate = false;
+import { localeFN } from "@/lib/param";
+import Profile from "@/components/profile";
+import { getTranslation } from "@/lib/hook";
+import Projects from "@/components/projects";
+import Experience from "@/components/experience";
 
 export async function generateMetadata(): Promise<Metadata> {
   return {
@@ -23,33 +20,36 @@ export async function generateMetadata(): Promise<Metadata> {
     ],
     openGraph: {
       title: "Home - Portfolio",
-      description: "A showcase of my work, skills, and experiences as a software developer.",
+      description:
+        "A showcase of my work, skills, and experiences as a software developer.",
       url: "https://ahmani-elmokhtar.vercel.app/",
     },
   };
 }
 
-const Home = () => {
-  const lang = localeFN.get();
+const Home = async () => {
+  const lang = await localeFN.get();
+  const t = getTranslation(lang);
+
   return (
     <section className="flex flex-col gap-14 items-center text-center md:text-left">
-        <div
-          id="about"
-          className="xl:text-left text-primary/75 text-justify text-base md:pt-0 pt-12"
-        >
-          <article>
-            <Profile />
-            <p className="text-center md:text-left">
-              <h1 className="text-xl font-bold ">
-                <span className="dark:text-white text-accent">// AHMANI </span>{" "}
-                ELMOKHTAR //
-              </h1>
-              {getTranslation(lang).aboutMe}
-            </p>
-          </article>
-        </div>
-        <Experience />
-        <Projects />
+      <div
+        id="about"
+        className="xl:text-left text-primary/75 text-justify text-base md:pt-0 pt-12"
+      >
+        <article>
+          <Profile />
+          <p className="text-center md:text-left">
+            <h1 className="text-xl font-bold ">
+              <span className="dark:text-white text-accent">// AHMANI </span>{" "}
+              ELMOKHTAR //
+            </h1>
+            {t.aboutMe}
+          </p>
+        </article>
+      </div>
+      <Experience />
+      <Projects />
     </section>
   );
 };

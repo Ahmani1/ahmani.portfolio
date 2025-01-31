@@ -1,5 +1,6 @@
-/* eslint-disable react/jsx-no-comment-textnodes */
+
 "use client";
+
 import { useState, useEffect } from "react";
 import NavLink from "./navLink";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
@@ -52,7 +53,6 @@ const Nav = () => {
 
   return (
     <>
-      {/* Desktop Navigation */}
       <div className="md:flex hidden flex-col min-h-screen justify-between">
         <nav className="flex flex-col gap-8">
           <section>
