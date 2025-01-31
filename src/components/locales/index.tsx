@@ -21,25 +21,25 @@ export default function LanguageToggle() {
         <button
           onClick={() => switchLanguage("en")}
           aria-label="Switch to English"
-          className={`flex items-center gap-2 rounded-md transition-all duration-300 ${
+          className={`block ${
             locale === "en"
-              ? "text-accent dark:text-white font-bold underline"
+              ? "text-primary dark:!text-accent font-bold underline "
               : "text-gray-500 hover:text-accent"
           }`}
         >
-          <span>EN</span>
+          EN
         </button>
 
         <button
           onClick={() => switchLanguage("fr")}
           aria-label="Switch to French"
-          className={`flex items-center gap-2 rounded-md transition-all duration-300 ${
+          className={`block ${
             locale === "fr"
-              ? "text-accent dark:text-white font-bold underline"
+              ? "text-primary dark:!text-accent font-bold underline"
               : "text-gray-500 hover:text-accent"
           }`}
         >
-          <span>FR</span>
+         FR
         </button>
       </div>
     </>

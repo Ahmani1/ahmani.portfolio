@@ -43,7 +43,7 @@ const ThemeToggle = () => {
         ></div>
         <div
           className={`absolute top-1 left-1 w-6 h-6 rounded-full shadow-md transform transition-transform duration-300 ease-in-out 
-                      ${isDarkMode ? "translate-x-6 bg-gray-200" : "bg-gray-800"}`}
+                      ${isDarkMode ? "translate-x-6 bg-accent" : "bg-gray-800"}`}
         >
           <div className="flex items-center justify-center h-full">
             {isDarkMode ? (

@@ -1,5 +1,7 @@
 export const translations = {
   en: {
+    titleDev: "Front End Developer" ,
+    build: 'Build accessible, pixel-perfect digital experiences for the web. ',
     experienceTitle: "Experience",
     experience1: {
       title: "Frontend Developer",
@@ -31,6 +33,7 @@ export const translations = {
         "Page integration in Drupal 7"
       ],
     },
+    aboutTitle: "About Me",
     aboutMe: "As a software development graduate, I bring energy, precision, and adaptability to every project I take on. With a strong passion for front-end development, particularly with React.js, I am always striving to enhance user experiences through clean, efficient code. My goal is to help drive the success of your business by delivering innovative solutions. I look forward to applying my skills to your team and embracing new challenges along the way.",
     projectsTitle: "Projects",
     flyerbeDescription: "An online printing e-commerce platform. Creation and integration of websites using HTML5, CSS3, JQ, and PHP5 (Drupal 7).",
@@ -38,6 +41,8 @@ export const translations = {
     mercuryDescription: "Development and maintenance of a custom website for Mercury Flooring, a leading provider of flooring solutions.",
   },
   fr: {
+    titleDev: "Développeur Frontend",
+    build: 'Construire des experiences digitales accessibles et parfaitement parfaites pour le web. ',
     experienceTitle: "Expérience",
     experience1: {
       title: "Développeur Frontend",
@@ -69,6 +74,7 @@ export const translations = {
         "Intégration des pages dans Drupal 7"
       ],
     },
+    aboutTitle: "A propos",
     aboutMe: "En tant que diplômé en développement logiciel, j'apporte de l'énergie, de la précision et de l'adaptabilité à chaque projet que je prends en charge. Avec une forte passion pour le développement front-end, en particulier avec React.js, je m'efforce toujours d'améliorer l'expérience utilisateur grâce à un code propre et efficace. Mon objectif est de contribuer au succès de votre entreprise en offrant des solutions innovantes. J'ai hâte de mettre mes compétences au service de votre équipe et de relever de nouveaux défis.",
     projectsTitle: "Projets",
     flyerbeDescription: "Un commerce en ligne (e-Commerce) d'impression. Création et intégration de sites web en utilisant HTML5, CSS3, JQ et PHP5 (Drupal 7).",

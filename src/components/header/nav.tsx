@@ -6,17 +6,19 @@ import NavLink from "./navLink";
 import Link from "next/link";
 import LanguageToggle from "../locales";
 import Social from "../social";
-
-const links = [
-  { id: "about", label: "About" },
-  { id: "experience", label: "Experience" },
-  { id: "projects", label: "Projects" },
-];
+import { getTranslation } from "@/lib/hook";
+import { useLayout } from "@/store/layout";
 
 const Nav = () => {
   const [activeLink, setActiveLink] = useState("about");
+  const {locale} = useLayout();
+  const t = getTranslation(locale as Locales);
  
-
+  const links = [
+    { id: "about", label: t.aboutTitle },
+    { id: "experience", label: t.experienceTitle },
+    { id: "projects", label: t.projectsTitle },
+  ];
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
@@ -60,10 +62,10 @@ const Nav = () => {
           <section>
             <h1 className="text-xl font-bold">
               <span className="text-accent block my-4 dark:text-white">
-                Front End Developer
+                {t.titleDev}
               </span>
               <p className="text-primary dark:text-white text-sm">
-                Build accessible, pixel-perfect digital experiences for the web.
+                {t.build}
               </p>
             </h1>
           </section>
