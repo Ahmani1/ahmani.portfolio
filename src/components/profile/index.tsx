@@ -15,7 +15,7 @@ const Profile = () => {
             >
                 <div className="w-[150px] h-[150px] overflow-hidden  relative">
                     <Image
-                        src="/photo.png"
+                        src="/profile.png"
                         alt="profi"
                         priority
                         quality={100}
