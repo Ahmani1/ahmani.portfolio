@@ -1,10 +1,11 @@
-
+/* eslint-disable react/jsx-no-comment-textnodes */
 "use client";
 
 import { useState, useEffect } from "react";
 import NavLink from "./navLink";
-import { FaGithub, FaLinkedin } from "react-icons/fa";
 import Link from "next/link";
+import LanguageToggle from "../locales";
+import Social from "../social";
 
 const links = [
   { id: "about", label: "About" },
@@ -53,6 +54,7 @@ const Nav = () => {
 
   return (
     <>
+      {/* Desktop Navigation */}
       <div className="md:flex hidden flex-col min-h-screen justify-between">
         <nav className="flex flex-col gap-8">
           <section>
@@ -78,24 +80,8 @@ const Nav = () => {
             ))}
           </section>
         </nav>
-        <section className="flex gap-4 mt-6">
-          <Link
-            href="https://www.linkedin.com/in/ahmani-el-mokhtar-b14107206/"
-            target="_blank"
-            className="text-primary dark:text-accent hover:text-accent transition-all dark:hover:text-white"
-            aria-label="LinkedIn Profile"
-          >
-            <FaLinkedin size={24} />
-          </Link>
-          <Link
-            href="https://github.com/Ahmani1"
-            target="_blank"
-            className="text-primary dark:text-accent hover:text-accent transition-all dark:hover:text-white"
-            aria-label="GitHub Profile"
-          >
-            <FaGithub size={24} />
-          </Link>
-        </section>
+        <LanguageToggle />
+        <Social />
       </div>
 
       {/* Mobile Navigation */}

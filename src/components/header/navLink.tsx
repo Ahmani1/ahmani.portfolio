@@ -11,7 +11,7 @@ const NavLink = ({ id, label, activeLink, onClick }: NavLinkProps) => {
   return (
     <button
       onClick={() => onClick(id)}
-      className={`capitalize font-medium transition-all w-fit ${
+      className={`capitalize font-medium transition-all w-fit text-base ${
         activeLink === id
           ? "text-accent dark:text-white dark:hover:text-white"
           : "hover:text-accent dark:hover:text-white dark:text-accent text-primary"

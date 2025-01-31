@@ -1,24 +1,28 @@
 "use client";
 
+import { useLayout } from "@/store/layout";
 import { useRouter } from "next/navigation";
 
-export default function LanguageToggle({ lang }: { lang: string }) {
+export default function LanguageToggle() {
   const router = useRouter();
+  const {locale} = useLayout();  
 
   const switchLanguage = (newLang: string) => {
-    if (newLang !== lang) {
+    if (newLang !== locale) {
       router.push(`/${newLang}`);
+      router.refresh();
+
     }
   };
 
   return (
     <>
-      <div className="flex gap-4 mb-4 items-center">
+      <div className="flex gap-4 items-center">
         <button
           onClick={() => switchLanguage("en")}
           aria-label="Switch to English"
           className={`flex items-center gap-2 rounded-md transition-all duration-300 ${
-            lang === "en"
+            locale === "en"
               ? "text-accent dark:text-white font-bold underline"
               : "text-gray-500 hover:text-accent"
           }`}
@@ -30,7 +34,7 @@ export default function LanguageToggle({ lang }: { lang: string }) {
           onClick={() => switchLanguage("fr")}
           aria-label="Switch to French"
           className={`flex items-center gap-2 rounded-md transition-all duration-300 ${
-            lang === "fr"
+            locale === "fr"
               ? "text-accent dark:text-white font-bold underline"
               : "text-gray-500 hover:text-accent"
           }`}

@@ -3,6 +3,8 @@ import { localeFN } from "@/lib/param";
 import type { Metadata } from "next";
 import { JetBrains_Mono } from "next/font/google";
 import "@/tailwind.css";
+import LangProvider from "@/components/locales/client";
+import Footer from "@/components/header/footer";
 
 const jetbrainsMono = JetBrains_Mono({
   variable: "--font-jetbrains-mono",
@@ -24,20 +26,23 @@ export default async function LangLayout({
   params,
   children,
 }: {
-  params: Promise <{ lang : Locales}> ;
+  params: Promise<{ lang: Locales }>;
   children: React.ReactNode;
 }) {
   const { lang } = await params;
-  localeFN.set(lang); 
+  localeFN.set(lang);
 
   return (
     <html lang={lang}>
-      <body 
-        className={`${jetbrainsMono.variable} container py-12 md:min-h-screen flex flex-col md:flex-row bg-secondary text-primary dark:bg-primary dark:text-secondary`}
+      <LangProvider lang={lang}>
+        <body
+          className={`${jetbrainsMono.variable} container py-12 md:min-h-screen flex flex-col md:flex-row bg-secondary text-primary dark:bg-primary dark:text-secondary`}
         >
-        <Header />
-        <main className="flex-1">{children}</main>
-      </body>
+          <Header />
+          <main className="flex-1">{children}</main>
+          <Footer />
+        </body>
+      </LangProvider>
     </html>
   );
 }
