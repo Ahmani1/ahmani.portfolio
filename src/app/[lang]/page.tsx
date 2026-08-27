@@ -71,7 +71,7 @@ export async function generateMetadata({
 const Home = async () => {
 
   return (
-    <section className="flex flex-col gap-14 items-center pt-20 text-center md:pt-0 md:text-left">
+    <section className="flex flex-col gap-14 items-center text-center md:pt-0 md:text-left">
       <div
         id="about"
         className="xl:text-left text-primary/75 text-justify text-base md:pt-0 pt-12"
