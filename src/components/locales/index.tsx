@@ -2,10 +2,12 @@
 
 import { useLayout } from "@/store/layout";
 import { useRouter } from "next/navigation";
+import { getTranslation } from "@/lib/hook";
 
 export default function LanguageToggle() {
   const router = useRouter();
   const {locale} = useLayout();  
+  const t = getTranslation(locale as Locales);
 
   const switchLanguage = (newLang: string) => {
     if (newLang !== locale) {
@@ -20,7 +22,7 @@ export default function LanguageToggle() {
       <div className="flex gap-4 items-center">
         <button
           onClick={() => switchLanguage("en")}
-          aria-label="Switch to English"
+          aria-label={t.switchToEnglish}
           className={`block ${
             locale === "en"
               ? "text-primary dark:!text-accent font-bold underline "
@@ -32,7 +34,7 @@ export default function LanguageToggle() {
 
         <button
           onClick={() => switchLanguage("fr")}
-          aria-label="Switch to French"
+          aria-label={t.switchToFrench}
           className={`block ${
             locale === "fr"
               ? "text-primary dark:!text-accent font-bold underline"

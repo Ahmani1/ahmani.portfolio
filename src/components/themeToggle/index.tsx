@@ -4,12 +4,14 @@ import { useState, useEffect } from "react";
 import { FaSun, FaMoon } from "react-icons/fa";
 
 const ThemeToggle = () => {
-  const [isDarkMode, setIsDarkMode] = useState(false);
+  const [isDarkMode, setIsDarkMode] = useState(true);
 
   useEffect(() => {
     const savedTheme = localStorage.getItem("theme");
-    if (savedTheme === "dark") {
-      setIsDarkMode(true);
+    const shouldUseDarkMode = savedTheme !== "light";
+    setIsDarkMode(shouldUseDarkMode);
+
+    if (shouldUseDarkMode) {
       document.documentElement.classList.add("dark");
     } else {
       setIsDarkMode(false);

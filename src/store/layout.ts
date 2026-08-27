@@ -11,7 +11,7 @@ export type LayoutState = {
 
 export const useLayout = create<LayoutState>((set) => ({
     locale: null,
-    mode: 'light',
+    mode: 'dark',
 
 
     SetLocale: (payload: Locales) => set(produce((state) => {

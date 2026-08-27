@@ -5,9 +5,10 @@ interface NavLinkProps {
   label: string;
   activeLink: string;
   onClick: (key: string) => void;
+  ariaLabel?: string;
 }
 
-const NavLink = ({ id, label, activeLink, onClick }: NavLinkProps) => {
+const NavLink = ({ id, label, activeLink, onClick, ariaLabel }: NavLinkProps) => {
   return (
     <button
       onClick={() => onClick(id)}
@@ -16,7 +17,7 @@ const NavLink = ({ id, label, activeLink, onClick }: NavLinkProps) => {
           ? "text-accent dark:text-white dark:hover:text-white"
           : "hover:text-accent dark:hover:text-white dark:text-accent text-primary"
       }`}
-      aria-label={`Go to ${label} section`}
+      aria-label={ariaLabel ?? label}
     >
       // {label}
     </button>

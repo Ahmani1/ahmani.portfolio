@@ -14,8 +14,13 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "My Awesome App",
-  description: "An awesome app built with Next.js.",
+  metadataBase: new URL("https://ahmani-elmokhtar.vercel.app"),
+  title: {
+    default: "Ahmani Elmokhtar | Frontend Developer & Software Engineer",
+    template: "%s | Ahmani Elmokhtar",
+  },
+  description:
+    "Portfolio of Ahmani Elmokhtar, Frontend Developer and Software Engineer specializing in Next.js, React, TypeScript and modern web applications.",
 };
 
 export async function generateStaticParams() {
